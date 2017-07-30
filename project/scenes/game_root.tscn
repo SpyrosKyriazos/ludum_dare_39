@@ -1,6 +1,22 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://scripts/base_script.gd" type="Script" id=1]
+[ext_resource path="res://assets/game_back.png" type="Texture" id=2]
+[ext_resource path="res://assets/black_ch.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://assets/black_ch_32.fnt" type="BitmapFont" id=4]
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.647059, 0.329412, 0.309804, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -36,6 +52,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
+texture = ExtResource( 2 )
 stretch_mode = 0
 
 [node name="rounds" type="Control" parent="."]
@@ -51,15 +68,15 @@ margin/bottom = 40.0
 
 [node name="round_caption" type="Label" parent="rounds"]
 
-rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 16.0
+margin/left = 32.0
 margin/top = 16.0
-margin/right = 64.0
-margin/bottom = 32.0
+margin/right = 176.0
+margin/bottom = 66.0
+custom_fonts/font = ExtResource( 3 )
 text = "Round"
 valign = 1
 percent_visible = 1.0
@@ -68,15 +85,15 @@ max_lines_visible = -1
 
 [node name="round_value" type="Label" parent="rounds"]
 
-rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 144.0
+margin/left = 176.0
 margin/top = 16.0
-margin/right = 160.0
-margin/bottom = 32.0
+margin/right = 224.0
+margin/bottom = 66.0
+custom_fonts/font = ExtResource( 3 )
 text = "1"
 align = 2
 valign = 1
@@ -86,15 +103,15 @@ max_lines_visible = -1
 
 [node name="player_caption" type="Label" parent="rounds"]
 
-rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 272.0
+margin/left = 400.0
 margin/top = 16.0
-margin/right = 320.0
-margin/bottom = 32.0
+margin/right = 544.0
+margin/bottom = 66.0
+custom_fonts/font = ExtResource( 3 )
 text = "Player"
 valign = 1
 percent_visible = 1.0
@@ -103,15 +120,15 @@ max_lines_visible = -1
 
 [node name="player_value" type="Label" parent="rounds"]
 
-rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 400.0
+margin/left = 544.0
 margin/top = 16.0
-margin/right = 416.0
-margin/bottom = 32.0
+margin/right = 592.0
+margin/bottom = 66.0
+custom_fonts/font = ExtResource( 3 )
 text = "1"
 align = 2
 valign = 1
@@ -121,15 +138,15 @@ max_lines_visible = -1
 
 [node name="apply_button" type="Button" parent="rounds"]
 
-rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 528.0
+margin/left = 832.0
 margin/top = 512.0
-margin/right = 576.0
-margin/bottom = 532.0
+margin/right = 976.0
+margin/bottom = 576.0
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -138,6 +155,7 @@ flat = false
 
 [node name="stats" type="Control" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -149,16 +167,16 @@ margin/bottom = 40.0
 
 [node name="power_caption" type="Label" parent="stats"]
 
-rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 672.0
-margin/top = 16.0
-margin/right = 763.0
-margin/bottom = 32.0
-text = "Power Points"
+margin/left = 640.0
+margin/top = 80.0
+margin/right = 800.0
+margin/bottom = 130.0
+custom_fonts/font = ExtResource( 3 )
+text = "Power"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -167,15 +185,16 @@ max_lines_visible = -1
 
 [node name="fam_caption1" type="Label" parent="stats"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 608.0
-margin/top = 80.0
-margin/right = 780.0
-margin/bottom = 96.0
+margin/left = 544.0
+margin/top = 144.0
+margin/right = 896.0
+margin/bottom = 176.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "P1 - House of Gillfield"
 percent_visible = 1.0
 lines_skipped = 0
@@ -183,15 +202,16 @@ max_lines_visible = -1
 
 [node name="fam_caption2" type="Label" parent="stats"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 608.0
-margin/top = 176.0
-margin/right = 791.0
-margin/bottom = 192.0
+margin/left = 544.0
+margin/top = 240.0
+margin/right = 896.0
+margin/bottom = 272.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "P4 - House of Rainmere"
 percent_visible = 1.0
 lines_skipped = 0
@@ -199,15 +219,16 @@ max_lines_visible = -1
 
 [node name="fam_caption3" type="Label" parent="stats"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 608.0
-margin/top = 144.0
-margin/right = 773.0
-margin/bottom = 160.0
+margin/left = 544.0
+margin/top = 208.0
+margin/right = 896.0
+margin/bottom = 240.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "P3 - House of Augustham"
 percent_visible = 1.0
 lines_skipped = 0
@@ -215,15 +236,16 @@ max_lines_visible = -1
 
 [node name="fam_caption4" type="Label" parent="stats"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 608.0
-margin/top = 112.0
-margin/right = 768.0
-margin/bottom = 128.0
+margin/left = 544.0
+margin/top = 176.0
+margin/right = 896.0
+margin/bottom = 208.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "P2 - House of Heltook"
 percent_visible = 1.0
 lines_skipped = 0
@@ -231,15 +253,16 @@ max_lines_visible = -1
 
 [node name="points1" type="Label" parent="stats"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 944.0
-margin/top = 80.0
-margin/right = 968.0
-margin/bottom = 96.0
+margin/left = 896.0
+margin/top = 144.0
+margin/right = 960.0
+margin/bottom = 176.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 2
 percent_visible = 1.0
@@ -248,15 +271,16 @@ max_lines_visible = -1
 
 [node name="points2" type="Label" parent="stats"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 944.0
-margin/top = 112.0
-margin/right = 968.0
-margin/bottom = 128.0
+margin/left = 896.0
+margin/top = 176.0
+margin/right = 960.0
+margin/bottom = 208.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 2
 percent_visible = 1.0
@@ -265,15 +289,16 @@ max_lines_visible = -1
 
 [node name="points3" type="Label" parent="stats"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 944.0
-margin/top = 144.0
-margin/right = 968.0
-margin/bottom = 160.0
+margin/left = 896.0
+margin/top = 208.0
+margin/right = 960.0
+margin/bottom = 240.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 2
 percent_visible = 1.0
@@ -282,15 +307,16 @@ max_lines_visible = -1
 
 [node name="points4" type="Label" parent="stats"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 944.0
-margin/top = 176.0
-margin/right = 968.0
-margin/bottom = 192.0
+margin/left = 896.0
+margin/top = 240.0
+margin/right = 960.0
+margin/bottom = 272.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 2
 percent_visible = 1.0
@@ -299,6 +325,7 @@ max_lines_visible = -1
 
 [node name="distribution" type="Control" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -310,16 +337,17 @@ margin/bottom = 40.0
 
 [node name="resources_caption" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 16.0
+margin/left = 112.0
 margin/top = 80.0
-margin/right = 85.0
-margin/bottom = 96.0
+margin/right = 320.0
+margin/bottom = 130.0
+custom_fonts/font = ExtResource( 3 )
 text = "Resources"
+align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -327,15 +355,16 @@ max_lines_visible = -1
 
 [node name="res_caption1" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 16.0
 margin/top = 192.0
-margin/right = 80.0
-margin/bottom = 208.0
+margin/right = 144.0
+margin/bottom = 224.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Approval"
 valign = 2
 percent_visible = 1.0
@@ -344,15 +373,16 @@ max_lines_visible = -1
 
 [node name="res_caption2" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 16.0
 margin/top = 288.0
-margin/right = 80.0
-margin/bottom = 304.0
+margin/right = 144.0
+margin/bottom = 320.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Military"
 valign = 2
 percent_visible = 1.0
@@ -361,15 +391,16 @@ max_lines_visible = -1
 
 [node name="res_caption3" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 16.0
 margin/top = 384.0
-margin/right = 80.0
-margin/bottom = 400.0
+margin/right = 144.0
+margin/bottom = 416.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Food"
 valign = 2
 percent_visible = 1.0
@@ -378,15 +409,16 @@ max_lines_visible = -1
 
 [node name="res_caption4" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 16.0
 margin/top = 480.0
-margin/right = 80.0
-margin/bottom = 496.0
+margin/right = 144.0
+margin/bottom = 512.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Saboteurs"
 valign = 2
 percent_visible = 1.0
@@ -395,15 +427,16 @@ max_lines_visible = -1
 
 [node name="res_value1" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 160.0
 margin/top = 192.0
-margin/right = 184.0
-margin/bottom = 208.0
+margin/right = 208.0
+margin/bottom = 224.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 2
@@ -413,15 +446,16 @@ max_lines_visible = -1
 
 [node name="res_value2" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 160.0
 margin/top = 288.0
-margin/right = 184.0
-margin/bottom = 304.0
+margin/right = 208.0
+margin/bottom = 320.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 2
@@ -431,15 +465,16 @@ max_lines_visible = -1
 
 [node name="res_value3" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 160.0
 margin/top = 384.0
-margin/right = 184.0
-margin/bottom = 400.0
+margin/right = 208.0
+margin/bottom = 416.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 2
@@ -449,15 +484,16 @@ max_lines_visible = -1
 
 [node name="res_value4" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 160.0
 margin/top = 480.0
-margin/right = 184.0
-margin/bottom = 496.0
+margin/right = 208.0
+margin/bottom = 512.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 2
@@ -467,15 +503,16 @@ max_lines_visible = -1
 
 [node name="res_cost1" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 240.0
 margin/top = 192.0
-margin/right = 264.0
-margin/bottom = 208.0
+margin/right = 288.0
+margin/bottom = 224.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
 align = 1
 valign = 2
@@ -485,15 +522,16 @@ max_lines_visible = -1
 
 [node name="res_cost2" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 240.0
 margin/top = 288.0
-margin/right = 264.0
-margin/bottom = 304.0
+margin/right = 288.0
+margin/bottom = 320.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10"
 align = 1
 valign = 2
@@ -503,15 +541,16 @@ max_lines_visible = -1
 
 [node name="res_cost3" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 240.0
 margin/top = 384.0
-margin/right = 264.0
-margin/bottom = 400.0
+margin/right = 288.0
+margin/bottom = 416.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10"
 align = 1
 valign = 2
@@ -521,15 +560,16 @@ max_lines_visible = -1
 
 [node name="res_cost4" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 240.0
 margin/top = 480.0
-margin/right = 264.0
-margin/bottom = 496.0
+margin/right = 288.0
+margin/bottom = 512.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "5"
 align = 1
 valign = 2
@@ -539,15 +579,16 @@ max_lines_visible = -1
 
 [node name="res_gain1" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 320.0
 margin/top = 192.0
-margin/right = 344.0
-margin/bottom = 208.0
+margin/right = 368.0
+margin/bottom = 224.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "5"
 align = 1
 valign = 2
@@ -557,15 +598,16 @@ max_lines_visible = -1
 
 [node name="res_gain2" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 320.0
 margin/top = 288.0
-margin/right = 344.0
-margin/bottom = 304.0
+margin/right = 368.0
+margin/bottom = 320.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "2"
 align = 1
 valign = 2
@@ -575,15 +617,16 @@ max_lines_visible = -1
 
 [node name="res_gain3" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 320.0
 margin/top = 384.0
-margin/right = 344.0
-margin/bottom = 400.0
+margin/right = 368.0
+margin/bottom = 416.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
 align = 1
 valign = 2
@@ -593,15 +636,16 @@ max_lines_visible = -1
 
 [node name="res_gain4" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 320.0
 margin/top = 480.0
-margin/right = 344.0
-margin/bottom = 496.0
+margin/right = 368.0
+margin/bottom = 512.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-20"
 align = 1
 valign = 2
@@ -611,15 +655,16 @@ max_lines_visible = -1
 
 [node name="res_total1" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 400.0
 margin/top = 192.0
-margin/right = 424.0
-margin/bottom = 208.0
+margin/right = 448.0
+margin/bottom = 224.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 2
@@ -629,15 +674,16 @@ max_lines_visible = -1
 
 [node name="res_total2" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 400.0
 margin/top = 288.0
-margin/right = 424.0
-margin/bottom = 304.0
+margin/right = 448.0
+margin/bottom = 320.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 2
@@ -647,15 +693,16 @@ max_lines_visible = -1
 
 [node name="res_total3" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 400.0
 margin/top = 384.0
-margin/right = 424.0
-margin/bottom = 400.0
+margin/right = 448.0
+margin/bottom = 416.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 2
@@ -665,15 +712,16 @@ max_lines_visible = -1
 
 [node name="res_total4" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 400.0
 margin/top = 480.0
-margin/right = 424.0
-margin/bottom = 496.0
+margin/right = 448.0
+margin/bottom = 512.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 2
@@ -683,15 +731,16 @@ max_lines_visible = -1
 
 [node name="value_caption" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 144.0
 margin/top = 160.0
-margin/right = 184.0
-margin/bottom = 176.0
+margin/right = 226.0
+margin/bottom = 192.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Value"
 align = 1
 valign = 2
@@ -701,15 +750,16 @@ max_lines_visible = -1
 
 [node name="cost_caption" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 224.0
 margin/top = 160.0
-margin/right = 264.0
-margin/bottom = 176.0
+margin/right = 304.0
+margin/bottom = 192.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Cost"
 align = 1
 valign = 2
@@ -719,15 +769,16 @@ max_lines_visible = -1
 
 [node name="power_caption" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 304.0
+margin/left = 288.0
 margin/top = 160.0
-margin/right = 344.0
-margin/bottom = 176.0
+margin/right = 400.0
+margin/bottom = 192.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Power"
 align = 1
 valign = 2
@@ -737,15 +788,16 @@ max_lines_visible = -1
 
 [node name="total_caption" type="Label" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 384.0
 margin/top = 160.0
-margin/right = 424.0
-margin/bottom = 176.0
+margin/right = 464.0
+margin/bottom = 192.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Total"
 align = 1
 valign = 2
@@ -755,15 +807,17 @@ max_lines_visible = -1
 
 [node name="player_list" type="ItemList" parent="distribution"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 480.0
+margin/left = 784.0
 margin/top = 320.0
-margin/right = 600.0
-margin/bottom = 400.0
+margin/right = 1021.0
+margin/bottom = 456.0
+custom_styles/bg = SubResource( 2 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 
 [node name="roll" type="Control" parent="."]
 
@@ -779,15 +833,15 @@ margin/bottom = 40.0
 
 [node name="roll_button" type="Button" parent="roll"]
 
-rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 784.0
+margin/left = 560.0
 margin/top = 512.0
-margin/right = 837.0
-margin/bottom = 532.0
+margin/right = 704.0
+margin/bottom = 576.0
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -796,15 +850,16 @@ flat = false
 
 [node name="roll_caption" type="Label" parent="roll"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 784.0
+margin/left = 560.0
 margin/top = 320.0
-margin/right = 832.0
-margin/bottom = 336.0
+margin/right = 672.0
+margin/bottom = 352.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Result:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -812,15 +867,16 @@ max_lines_visible = -1
 
 [node name="result1" type="Label" parent="roll"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 736.0
+margin/left = 496.0
 margin/top = 368.0
-margin/right = 752.0
-margin/bottom = 384.0
+margin/right = 528.0
+margin/bottom = 400.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 1
@@ -830,15 +886,16 @@ max_lines_visible = -1
 
 [node name="result2" type="Label" parent="roll"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 784.0
+margin/left = 544.0
 margin/top = 368.0
-margin/right = 800.0
-margin/bottom = 384.0
+margin/right = 576.0
+margin/bottom = 400.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 1
@@ -848,15 +905,16 @@ max_lines_visible = -1
 
 [node name="result3" type="Label" parent="roll"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 832.0
+margin/left = 592.0
 margin/top = 368.0
-margin/right = 848.0
-margin/bottom = 384.0
+margin/right = 624.0
+margin/bottom = 400.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 1
@@ -866,15 +924,16 @@ max_lines_visible = -1
 
 [node name="result4" type="Label" parent="roll"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 880.0
+margin/left = 640.0
 margin/top = 368.0
-margin/right = 896.0
-margin/bottom = 384.0
+margin/right = 672.0
+margin/bottom = 400.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 1
@@ -884,15 +943,16 @@ max_lines_visible = -1
 
 [node name="result5" type="Label" parent="roll"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 928.0
+margin/left = 688.0
 margin/top = 368.0
-margin/right = 944.0
-margin/bottom = 384.0
+margin/right = 720.0
+margin/bottom = 400.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 1
@@ -902,15 +962,16 @@ max_lines_visible = -1
 
 [node name="result6" type="Label" parent="roll"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 976.0
+margin/left = 736.0
 margin/top = 368.0
-margin/right = 992.0
-margin/bottom = 384.0
+margin/right = 768.0
+margin/bottom = 400.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 1
@@ -920,15 +981,16 @@ max_lines_visible = -1
 
 [node name="result_total" type="Label" parent="roll"]
 
-rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 880.0
+margin/left = 672.0
 margin/top = 320.0
-margin/right = 904.0
-margin/bottom = 336.0
+margin/right = 704.0
+margin/bottom = 352.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 2
 percent_visible = 1.0
@@ -1033,8 +1095,105 @@ _update_shape_index = 0
 
 [node name="all_dice" type="Node2D" parent="dices"]
 
+[node name="game_over_dialog" type="AcceptDialog" parent="."]
+
+visibility/visible = false
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 480.0
+margin/top = 28.0
+margin/right = 211.0
+margin/bottom = -64.0
+popup/exclusive = false
+window/title = "Game Over"
+dialog/text = "The winner is: 
+
+Press OK to return to main menu."
+dialog/hide_on_ok = true
+
+[node name="game_over_panel" type="PopupPanel" parent="."]
+
+visibility/visible = false
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 176.0
+margin/top = 124.0
+margin/right = -128.0
+margin/bottom = -116.0
+popup/exclusive = false
+
+[node name="back_to_menu" type="Button" parent="game_over_panel"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 32.0
+margin/top = 176.0
+margin/right = 272.0
+margin/bottom = 224.0
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Return to Menu"
+flat = false
+
+[node name="winner_label" type="Label" parent="game_over_panel"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 32.0
+margin/top = 16.0
+margin/right = 272.0
+margin/bottom = 160.0
+custom_fonts/font = ExtResource( 4 )
+text = "P1 - The House of Gillfield is the most powerfull in the land."
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="back_to_menu" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 768.0
+margin/top = 16.0
+margin/right = 1008.0
+margin/bottom = 64.0
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Return to Menu"
+flat = false
+
 [connection signal="pressed" from="rounds/apply_button" to="." method="_on_apply_button_pressed"]
 
 [connection signal="pressed" from="roll/roll_button" to="." method="_on_roll_button_pressed"]
+
+[connection signal="confirmed" from="game_over_dialog" to="." method="_on_game_over_dialog_confirmed"]
+
+[connection signal="pressed" from="game_over_panel/back_to_menu" to="." method="_on_back_to_menu_pressed"]
+
+[connection signal="pressed" from="back_to_menu" to="." method="_on_back_to_menu_pressed"]
 
 
