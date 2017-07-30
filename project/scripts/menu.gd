@@ -27,6 +27,13 @@ func populate_item_lists():
 	list4.select(1)
 
 func _on_button_start_pressed():
+	get_node("audio/fx_player").play("write_effect")
+	var t = Timer.new()
+	t.set_wait_time(0.11)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
 	global.ai_players.clear()
 	var option1 = get_node("option1/option_button1").get_selected()
 	if option1 == 1: global.ai_players.append(1)

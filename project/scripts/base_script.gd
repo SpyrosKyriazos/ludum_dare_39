@@ -8,7 +8,7 @@ const image4 = preload("res://assets/dice4.png");
 const image5 = preload("res://assets/dice5.png");
 const image6 = preload("res://assets/dice6.png");
 const rounds = 20
-const ai_wait_time = 2
+const ai_wait_time = 1
 const ai_area1 = Vector2(240,250)
 const ai_area2 = Vector2(240,346)
 const ai_area3 = Vector2(240,442)
@@ -19,7 +19,7 @@ const c_military_gain = 2
 const c_military_cost = 10
 const c_food_gain = 8
 const c_food_cost = 10
-const c_saboteur_gain = -30
+const c_saboteur_gain = -130
 const c_saboteur_cost = 5
 var ai_players = global.ai_players
 var lost_players = []
@@ -153,6 +153,8 @@ func update_area_values():
 	get_node("distribution/res_total4").set_text(str(total_power))
 
 func _on_roll_button_pressed():
+	get_node("audio/fx_player").play("dices")
+	
 	roll1 = randi()%6+1
 	get_node("roll/result1").set_text(str(roll1))
 	roll2 = randi()%6+1
@@ -243,6 +245,7 @@ func reset_rolls():
 	get_node("roll/roll_button").set_disabled(false)
 
 func _on_apply_button_pressed():
+	get_node("audio/fx_player").play("write_effect")
 	apply_points()
 	prepare_next_round()
 
@@ -292,7 +295,7 @@ func ai_turn():
 #	print("in ai: " + str(fam_step))
 	# wait
 	var t = Timer.new()
-	t.set_wait_time(ai_wait_time/4)
+	t.set_wait_time(0.5)
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()
@@ -300,7 +303,7 @@ func ai_turn():
 	# roll
 	_on_roll_button_pressed()
 	# wait
-	t.set_wait_time(ai_wait_time/2)
+	t.set_wait_time(0.5)
 	t.start()
 	yield(t, "timeout")
 	# assign values
@@ -498,19 +501,19 @@ func apply_points():
 	if player_index != null:
 		if player_index == 0:
 			fam1_points += sab_points
-			if fam1_points <=0: lost_players.append(1)
+			if fam1_points <=0 && !lost_players.has(1): lost_players.append(1)
 			get_node("stats/points1").set_text(str(fam1_points))
 		elif player_index == 1:
 			fam2_points += sab_points
-			if fam2_points <=0: lost_players.append(2)
+			if fam2_points <=0 && !lost_players.has(2): lost_players.append(2)
 			get_node("stats/points2").set_text(str(fam2_points))
 		elif player_index == 2:
 			fam3_points += sab_points
-			if fam3_points <=0: lost_players.append(3)
+			if fam3_points <=0 && !lost_players.has(3): lost_players.append(3)
 			get_node("stats/points3").set_text(str(fam3_points))
 		elif player_index == 3:
 			fam4_points += sab_points
-			if fam4_points <=0: lost_players.append(4)
+			if fam4_points <=0 && !lost_players.has(4): lost_players.append(4)
 			get_node("stats/points4").set_text(str(fam4_points))
 	
 	if fam_step == 1:
@@ -587,7 +590,15 @@ func game_over():
 	panel.popup()
 
 func _on_game_over_dialog_confirmed():
+	get_node("audio/fx_player").play("write_effect")
 	get_tree().change_scene("res://scenes/menu.tscn")
 
 func _on_back_to_menu_pressed():
+	get_node("audio/fx_player").play("write_effect")
+	var t = Timer.new()
+	t.set_wait_time(0.11)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
 	get_tree().change_scene("res://scenes/menu.tscn")
