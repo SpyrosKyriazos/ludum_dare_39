@@ -29,16 +29,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.6142256"
-     inkscape:cx="138.32073"
-     inkscape:cy="344.55089"
+     inkscape:zoom="1.1414299"
+     inkscape:cx="9.0594854"
+     inkscape:cy="352.63075"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1858"
-     inkscape:window-height="1057"
-     inkscape:window-x="1672"
-     inkscape:window-y="-8"
+     inkscape:window-width="1680"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="22"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -519,5 +519,24 @@
        inkscape:export-filename="C:\skyr\projects\github\ludum_dare_39\project\assets\list_back.png"
        inkscape:export-xdpi="254.00002"
        inkscape:export-ydpi="254.00002" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.72964096px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.34324101"
+       x="30.175301"
+       y="210.25323"
+       id="text4620-9"
+       inkscape:export-filename="C:\skyr\projects\github\ludum_dare_39\project\assets\logo.png"
+       inkscape:export-xdpi="254"
+       inkscape:export-ydpi="254"><tspan
+         sodipodi:role="line"
+         id="tspan4618-5"
+         x="30.175301"
+         y="210.25323"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BlackChancery;-inkscape-font-specification:BlackChancery;stroke-width:0.34324101">Power</tspan><tspan
+         sodipodi:role="line"
+         x="30.175301"
+         y="228.69716"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:BlackChancery;-inkscape-font-specification:BlackChancery;stroke-width:0.34324101"
+         id="tspan4614">Struggle</tspan></text>
   </g>
 </svg>
